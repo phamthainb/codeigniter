@@ -1,15 +1,19 @@
-<!doctype html>
-<html lang="en">
+  <?php
+// print_r($dataProduct);
+// die();
+?>
+  <!doctype html>
+  <html lang="en">
 
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css">
-    <link href="assets/vendor/fonts/circular-std/style.css" rel="stylesheet">
-    <link rel="stylesheet" href="assets/libs/css/style.css">
-    <link rel="stylesheet" href="assets/vendor/fonts/fontawesome/css/fontawesome-all.css">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/admin/vendor/bootstrap/css/bootstrap.min.css">
+    <link href="<?php echo base_url(); ?>assets/admin/vendor/fonts/circular-std/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/admin/libs/css/style.css">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/admin/vendor/fonts/fontawesome/css/fontawesome-all.css">
     <title>Concept - Bootstrap 4 Admin Dashboard Template</title>
   </head>
 
@@ -43,7 +47,7 @@
                       <div class="list-group">
                         <a href="#" class="list-group-item list-group-item-action active">
                           <div class="notification-info">
-                            <div class="notification-list-user-img"><img src="assets/images/avatar-2.jpg" alt="" class="user-avatar-md rounded-circle"></div>
+                            <div class="notification-list-user-img"><img src="<?php echo base_url(); ?>assets/admin/images/avatar-2.jpg" alt="" class="user-avatar-md rounded-circle"></div>
                             <div class="notification-list-user-block"><span class="notification-list-user-name">Jeremy Rakestraw</span>accepted your invitation to join the team.
                               <div class="notification-date">2 min ago</div>
                             </div>
@@ -51,7 +55,7 @@
                         </a>
                         <a href="#" class="list-group-item list-group-item-action">
                           <div class="notification-info">
-                            <div class="notification-list-user-img"><img src="assets/images/avatar-3.jpg" alt="" class="user-avatar-md rounded-circle"></div>
+                            <div class="notification-list-user-img"><img src="<?php echo base_url(); ?>assets/admin/images/avatar-3.jpg" alt="" class="user-avatar-md rounded-circle"></div>
                             <div class="notification-list-user-block"><span class="notification-list-user-name">John Abraham </span>is now following you
                               <div class="notification-date">2 days ago</div>
                             </div>
@@ -59,7 +63,7 @@
                         </a>
                         <a href="#" class="list-group-item list-group-item-action">
                           <div class="notification-info">
-                            <div class="notification-list-user-img"><img src="assets/images/avatar-4.jpg" alt="" class="user-avatar-md rounded-circle"></div>
+                            <div class="notification-list-user-img"><img src="<?php echo base_url(); ?>assets/admin/images/avatar-4.jpg" alt="" class="user-avatar-md rounded-circle"></div>
                             <div class="notification-list-user-block"><span class="notification-list-user-name">Monaan Pechi</span> is watching your main repository
                               <div class="notification-date">2 min ago</div>
                             </div>
@@ -67,7 +71,7 @@
                         </a>
                         <a href="#" class="list-group-item list-group-item-action">
                           <div class="notification-info">
-                            <div class="notification-list-user-img"><img src="assets/images/avatar-5.jpg" alt="" class="user-avatar-md rounded-circle"></div>
+                            <div class="notification-list-user-img"><img src="<?php echo base_url(); ?>assets/admin/images/avatar-5.jpg" alt="" class="user-avatar-md rounded-circle"></div>
                             <div class="notification-list-user-block"><span class="notification-list-user-name">Jessica Caruso</span>accepted your invitation to join the team.
                               <div class="notification-date">2 min ago</div>
                             </div>
@@ -87,24 +91,24 @@
                   <li class="connection-list">
                     <div class="row">
                       <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 ">
-                        <a href="#" class="connection-item"><img src="assets/images/github.png" alt=""> <span>Github</span></a>
+                        <a href="#" class="connection-item"><img src="<?php echo base_url(); ?>assets/admin/images/github.png" alt=""> <span>Github</span></a>
                       </div>
                       <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 ">
-                        <a href="#" class="connection-item"><img src="assets/images/dribbble.png" alt=""> <span>Dribbble</span></a>
+                        <a href="#" class="connection-item"><img src="<?php echo base_url(); ?>assets/admin/images/dribbble.png" alt=""> <span>Dribbble</span></a>
                       </div>
                       <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 ">
-                        <a href="#" class="connection-item"><img src="assets/images/dropbox.png" alt=""> <span>Dropbox</span></a>
+                        <a href="#" class="connection-item"><img src="<?php echo base_url(); ?>assets/admin/images/dropbox.png" alt=""> <span>Dropbox</span></a>
                       </div>
                     </div>
                     <div class="row">
                       <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 ">
-                        <a href="#" class="connection-item"><img src="assets/images/bitbucket.png" alt=""> <span>Bitbucket</span></a>
+                        <a href="#" class="connection-item"><img src="<?php echo base_url(); ?>assets/admin/images/bitbucket.png" alt=""> <span>Bitbucket</span></a>
                       </div>
                       <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 ">
-                        <a href="#" class="connection-item"><img src="assets/images/mail_chimp.png" alt=""><span>Mail chimp</span></a>
+                        <a href="#" class="connection-item"><img src="<?php echo base_url(); ?>assets/admin/images/mail_chimp.png" alt=""><span>Mail chimp</span></a>
                       </div>
                       <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 ">
-                        <a href="#" class="connection-item"><img src="assets/images/slack.png" alt=""> <span>Slack</span></a>
+                        <a href="#" class="connection-item"><img src="<?php echo base_url(); ?>assets/admin/images/slack.png" alt=""> <span>Slack</span></a>
                       </div>
                     </div>
                   </li>
@@ -114,7 +118,7 @@
                 </ul>
               </li>
               <li class="nav-item dropdown nav-user">
-                <a class="nav-link nav-user-img" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="assets/images/avatar-1.jpg" alt="" class="user-avatar-md rounded-circle"></a>
+                <a class="nav-link nav-user-img" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="<?php echo base_url(); ?>assets/admin/images/avatar-1.jpg" alt="" class="user-avatar-md rounded-circle"></a>
                 <div class="dropdown-menu dropdown-menu-right nav-user-dropdown" aria-labelledby="navbarDropdownMenuLink2">
                   <div class="nav-user-info">
                     <h5 class="mb-0 text-white nav-user-name">John Abraham </h5>
@@ -135,7 +139,7 @@
       <!-- ============================================================== -->
       <!-- left sidebar -->
       <!-- ============================================================== -->
-       <div class="nav-left-sidebar sidebar-dark">
+      <div class="nav-left-sidebar sidebar-dark">
         <div class="menu-list">
           <nav class="navbar navbar-expand-lg navbar-light">
             <a class="d-xl-none d-lg-none" href="#">Dashboard</a>
@@ -267,262 +271,48 @@
             <!-- ============================================================== -->
             <div class="row">
               <div class="col-xl-9 col-lg-8 col-md-8 col-sm-12 col-12">
-                <div class="row">
-                  <div class="col-xl-4 col-lg-6 col-md-12 col-sm-12 col-12">
+                <div class="row" id="product-list">
+                  <!-- // start list product -->
+                  <?php foreach ($dataProduct as $key) {
+	?>
+                   <div class="col-xl-4 col-lg-6 col-md-12 col-sm-12 col-12">
                     <div class="product-thumbnail">
                       <div class="product-img-head">
                         <div class="product-img">
-                          <img src="assets/images/eco-product-img-1.png" alt="" class="img-fluid"></div>
-                        <div class="ribbons"></div>
-                        <div class="ribbons-text">New</div>
-                        <div class=""><a href="#" class="product-wishlist-btn"><i class="fas fa-heart"></i></a></div>
-                      </div>
-                      <div class="product-content">
-                        <div class="product-content-head">
-                          <h3 class="product-title">T-Shirt Product Title</h3>
-                          <div class="product-rating d-inline-block">
-                            <i class="fa fa-fw fa-star"></i>
-                            <i class="fa fa-fw fa-star"></i>
-                            <i class="fa fa-fw fa-star"></i>
-                            <i class="fa fa-fw fa-star"></i>
-                            <i class="fa fa-fw fa-star"></i>
-                          </div>
-                          <div class="product-price">$49.00</div>
+                          <img src="<?php echo base_url() . $key['product_image'] ?>" alt="" class="img-fluid"></div>
+                          <!-- <div class="ribbons"><div class="ribbons-text"><?php echo $key['product_point'] ?></div></div> -->
                         </div>
-                        <div class="product-btn">
-                          <a href="#" class="btn btn-primary">Add to Cart</a>
-                          <a href="#" class="btn btn-outline-light">Details</a>
-                          <a href="#" class="btn btn-outline-light"><i class="fas fa-exchange-alt"></i></a>
+                        <div class="product-content">
+                          <div class="product-content-head">
+                            <h3 class="product-title">
+                              <?php echo $key['product_name'] ?>
+                            </h3>
+                            <div class="product-rating d-inline-block">
+                              <?php
+for ($i = 0; $i < $key['product_vote']; $i++) {
+		echo "<i class='fa fa-fw fa-star'></i>";
+	}
+	?>
+
+                            </div>
+                            <?php
+for ($i = 5; $i > $key['product_vote']; $i--) {
+		echo "<i class='fa fa-fw fa-star'></i>";
+	}
+	?>
+                            <div class="product-price">$
+                              <?php echo $key['product_price'] ?>
+                            </div>
+                          </div>
+                          <div class="product-btn">
+                            <a href="#" class="btn btn-outline-light">Details</a>
+                            <a href="#" class="btn btn-outline-light"><i class="fas fa-exchange-alt"></i></a>
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                  <div class="col-xl-4 col-lg-6 col-md-12 col-sm-12 col-12">
-                    <div class="product-thumbnail">
-                      <div class="product-img-head">
-                        <div class="product-img">
-                          <img src="assets/images/eco-product-img-2.png" alt="" class="img-fluid"></div>
-                        <div class="ribbons bg-danger"></div>
-                        <div class="ribbons-text">Sold</div>
-                        <div class=""><a href="#" class="product-wishlist-btn"><i class="fas fa-heart"></i></a></div>
-                      </div>
-                      <div class="product-content">
-                        <div class="product-content-head">
-                          <h3 class="product-title">T-Shirt Product Title</h3>
-                          <div class="product-rating d-inline-block">
-                            <i class="fa fa-fw fa-star"></i>
-                            <i class="fa fa-fw fa-star"></i>
-                            <i class="fa fa-fw fa-star"></i>
-                            <i class="fa fa-fw fa-star"></i>
-                            <i class="fa fa-fw fa-star"></i>
-                          </div>
-                          <div class="product-price">$49.00</div>
-                        </div>
-                        <div class="product-btn">
-                          <a href="#" class="btn btn-primary">Add to Cart</a>
-                          <a href="#" class="btn btn-outline-light">Details</a>
-                          <a href="#" class="btn btn-outline-light"><i class="fas fa-exchange-alt"></i></a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-xl-4 col-lg-6 col-md-12 col-sm-12 col-12">
-                    <div class="product-thumbnail">
-                      <div class="product-img-head">
-                        <div class="product-img">
-                          <img src="assets/images/eco-product-img-3.png" alt="" class="img-fluid"></div>
-                        <div class="ribbons bg-brand"></div>
-                        <div class="ribbons-text">Offer</div>
-                        <div class=""><a href="#" class="product-wishlist-btn active"><i class="fas fa-heart"></i></a></div>
-                      </div>
-                      <div class="product-content">
-                        <div class="product-content-head">
-                          <h3 class="product-title">T-Shirt Product Title</h3>
-                          <div class="product-rating d-inline-block">
-                            <i class="fa fa-fw fa-star"></i>
-                            <i class="fa fa-fw fa-star"></i>
-                            <i class="fa fa-fw fa-star"></i>
-                            <i class="fa fa-fw fa-star"></i>
-                            <i class="fa fa-fw fa-star"></i>
-                          </div>
-                          <div class="product-price">$49.00
-                            <del class="product-del">$69.00</del>
-                          </div>
-                        </div>
-                        <div class="product-btn">
-                          <a href="#" class="btn btn-primary">Add to Cart</a>
-                          <a href="#" class="btn btn-outline-light">Details</a>
-                          <a href="#" class="btn btn-outline-light"><i class="fas fa-exchange-alt"></i></a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-xl-4 col-lg-6 col-md-12 col-sm-12 col-12">
-                    <div class="product-thumbnail">
-                      <div class="product-img-head">
-                        <div class="product-img">
-                          <img src="assets/images/eco-product-img-4.png" alt="" class="img-fluid"></div>
-                        <div class=""><a href="#" class="product-wishlist-btn"><i class="fas fa-heart"></i></a></div>
-                      </div>
-                      <div class="product-content">
-                        <div class="product-content-head">
-                          <h3 class="product-title">T-Shirt Product Title</h3>
-                          <div class="product-rating d-inline-block">
-                            <i class="fa fa-fw fa-star"></i>
-                            <i class="fa fa-fw fa-star"></i>
-                            <i class="fa fa-fw fa-star"></i>
-                            <i class="fa fa-fw fa-star"></i>
-                            <i class="fa fa-fw fa-star"></i>
-                          </div>
-                          <div class="product-price">$49.00</div>
-                        </div>
-                        <div class="product-btn">
-                          <a href="#" class="btn btn-primary">Add to Cart</a>
-                          <a href="#" class="btn btn-outline-light">Details</a>
-                          <a href="#" class="btn btn-outline-light"><i class="fas fa-exchange-alt"></i></a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-xl-4 col-lg-6 col-md-12 col-sm-12 col-12">
-                    <div class="product-thumbnail">
-                      <div class="product-img-head">
-                        <div class="product-img">
-                          <img src="assets/images/eco-product-img-3.png" alt="" class="img-fluid"></div>
-                        <div class=""><a href="#" class="product-wishlist-btn"><i class="fas fa-heart"></i></a></div>
-                      </div>
-                      <div class="product-content">
-                        <div class="product-content-head">
-                          <h3 class="product-title">T-Shirt Product Title</h3>
-                          <div class="product-rating d-inline-block">
-                            <i class="fa fa-fw fa-star"></i>
-                            <i class="fa fa-fw fa-star"></i>
-                            <i class="fa fa-fw fa-star"></i>
-                            <i class="fa fa-fw fa-star"></i>
-                            <i class="fa fa-fw fa-star"></i>
-                          </div>
-                          <div class="product-price">$49.00
-                            <del class="product-del">$69.00</del>
-                          </div>
-                        </div>
-                        <div class="product-btn">
-                          <a href="#" class="btn btn-primary">Add to Cart</a>
-                          <a href="#" class="btn btn-outline-light">Details</a>
-                          <a href="#" class="btn btn-outline-light"><i class="fas fa-exchange-alt"></i></a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-xl-4 col-lg-6 col-md-12 col-sm-12 col-12">
-                    <div class="product-thumbnail">
-                      <div class="product-img-head">
-                        <div class="product-img">
-                          <img src="assets/images/eco-product-img-2.png" alt="" class="img-fluid"></div>
-                        <div class=""><a href="#" class="product-wishlist-btn"><i class="fas fa-heart"></i></a></div>
-                      </div>
-                      <div class="product-content">
-                        <div class="product-content-head">
-                          <h3 class="product-title">T-Shirt Product Title</h3>
-                          <div class="product-rating d-inline-block">
-                            <i class="fa fa-fw fa-star"></i>
-                            <i class="fa fa-fw fa-star"></i>
-                            <i class="fa fa-fw fa-star"></i>
-                            <i class="fa fa-fw fa-star"></i>
-                            <i class="fa fa-fw fa-star"></i>
-                          </div>
-                          <div class="product-price">$49.00</div>
-                        </div>
-                        <div class="product-btn">
-                          <a href="#" class="btn btn-primary">Add to Cart</a>
-                          <a href="#" class="btn btn-outline-light">Details</a>
-                          <a href="#" class="btn btn-outline-light"><i class="fas fa-exchange-alt"></i></a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-xl-4 col-lg-6 col-md-12 col-sm-12 col-12">
-                    <div class="product-thumbnail">
-                      <div class="product-img-head">
-                        <div class="product-img">
-                          <img src="assets/images/eco-product-img-1.png" alt="" class="img-fluid"></div>
-                        <div class=""><a href="#" class="product-wishlist-btn"><i class="fas fa-heart"></i></a></div>
-                      </div>
-                      <div class="product-content">
-                        <div class="product-content-head">
-                          <h3 class="product-title">T-Shirt Product Title</h3>
-                          <div class="product-rating d-inline-block">
-                            <i class="fa fa-fw fa-star"></i>
-                            <i class="fa fa-fw fa-star"></i>
-                            <i class="fa fa-fw fa-star"></i>
-                            <i class="fa fa-fw fa-star"></i>
-                            <i class="fa fa-fw fa-star"></i>
-                          </div>
-                          <div class="product-price">$49.00</div>
-                        </div>
-                        <div class="product-btn">
-                          <a href="#" class="btn btn-primary">Add to Cart</a>
-                          <a href="#" class="btn btn-outline-light">Details</a>
-                          <a href="#" class="btn btn-outline-light"><i class="fas fa-exchange-alt"></i></a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-xl-4 col-lg-6 col-md-12 col-sm-12 col-12">
-                    <div class="product-thumbnail">
-                      <div class="product-img-head">
-                        <div class="product-img">
-                          <img src="assets/images/eco-product-img-2.png" alt="" class="img-fluid"></div>
-                        <div class=""><a href="#" class="product-wishlist-btn"><i class="fas fa-heart"></i></a></div>
-                      </div>
-                      <div class="product-content">
-                        <div class="product-content-head">
-                          <h3 class="product-title">T-Shirt Product Title</h3>
-                          <div class="product-rating d-inline-block">
-                            <i class="fa fa-fw fa-star"></i>
-                            <i class="fa fa-fw fa-star"></i>
-                            <i class="fa fa-fw fa-star"></i>
-                            <i class="fa fa-fw fa-star"></i>
-                            <i class="fa fa-fw fa-star"></i>
-                          </div>
-                          <div class="product-price">$49.00</div>
-                        </div>
-                        <div class="product-btn">
-                          <a href="#" class="btn btn-primary">Add to Cart</a>
-                          <a href="#" class="btn btn-outline-light">Details</a>
-                          <a href="#" class="btn btn-outline-light"><i class="fas fa-exchange-alt"></i></a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-xl-4 col-lg-6 col-md-12 col-sm-12 col-12">
-                    <div class="product-thumbnail">
-                      <div class="product-img-head">
-                        <div class="product-img">
-                          <img src="assets/images/eco-product-img-4.png" alt="" class="img-fluid"></div>
-                        <div class=""><a href="#" class="product-wishlist-btn"><i class="fas fa-heart"></i></a></div>
-                      </div>
-                      <div class="product-content">
-                        <div class="product-content-head">
-                          <h3 class="product-title">T-Shirt Product Title</h3>
-                          <div class="product-rating d-inline-block">
-                            <i class="fa fa-fw fa-star"></i>
-                            <i class="fa fa-fw fa-star"></i>
-                            <i class="fa fa-fw fa-star"></i>
-                            <i class="fa fa-fw fa-star"></i>
-                            <i class="fa fa-fw fa-star"></i>
-                          </div>
-                          <div class="product-price">$49.00
-                            <del class="product-del">$69.00</del>
-                          </div>
-                        </div>
-                        <div class="product-btn">
-                          <a href="#" class="btn btn-primary">Add to Cart</a>
-                          <a href="#" class="btn btn-outline-light">Details</a>
-                          <a href="#" class="btn btn-outline-light"><i class="fas fa-exchange-alt"></i></a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                  <?php }?>
+                  <!-- // end list product -->
                   <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                     <nav aria-label="Page navigation example">
                       <ul class="pagination">
@@ -542,102 +332,58 @@
                     <h4 class="mb-0">E-Commerce Filter</h4>
                   </div>
                   <div class="product-sidebar-widget">
-                    <h4 class="product-sidebar-widget-title">Category</h4>
-                    <div class="custom-control custom-checkbox">
-                      <input type="checkbox" class="custom-control-input" id="cat-1">
-                      <label class="custom-control-label" for="cat-1">Categories #1</label>
-                    </div>
-                    <div class="custom-control custom-checkbox">
-                      <input type="checkbox" class="custom-control-input" id="cat-2">
-                      <label class="custom-control-label" for="cat-2">Categories #2</label>
-                    </div>
-                    <div class="custom-control custom-checkbox">
-                      <input type="checkbox" class="custom-control-input" id="cat-3">
-                      <label class="custom-control-label" for="cat-3">Categories #3</label>
-                    </div>
-                    <div class="custom-control custom-checkbox">
-                      <input type="checkbox" class="custom-control-input" id="cat-4">
-                      <label class="custom-control-label" for="cat-4">Categories #4</label>
-                    </div>
-                    <div class="custom-control custom-checkbox">
-                      <input type="checkbox" class="custom-control-input" id="cat-5">
-                      <label class="custom-control-label" for="cat-5">Categories #5</label>
-                    </div>
-                  </div>
-                  <div class="product-sidebar-widget">
                     <h4 class="product-sidebar-widget-title">Size</h4>
                     <div class="custom-control custom-checkbox">
-                      <input type="checkbox" class="custom-control-input" id="size-1">
+                      <input type="checkbox" class="checkbox-filter custom-control-input" id="size-1">
                       <label class="custom-control-label" for="size-1">Small</label>
                     </div>
                     <div class="custom-control custom-checkbox">
-                      <input type="checkbox" class="custom-control-input" id="size-2">
+                      <input type="checkbox" class="checkbox-filter custom-control-input" id="size-2">
                       <label class="custom-control-label" for="size-2">Medium</label>
                     </div>
                     <div class="custom-control custom-checkbox">
-                      <input type="checkbox" class="custom-control-input" id="size-3">
+                      <input type="checkbox" class="checkbox-filter custom-control-input" id="size-3">
                       <label class="custom-control-label" for="size-3">Large</label>
                     </div>
                     <div class="custom-control custom-checkbox">
-                      <input type="checkbox" class="custom-control-input" id="size-4">
+                      <input type="checkbox" class="checkbox-filter custom-control-input" id="size-4">
                       <label class="custom-control-label" for="size-4">Extra Large</label>
-                    </div>
-                  </div>
-                  <div class="product-sidebar-widget">
-                    <h4 class="product-sidebar-widget-title">Brand</h4>
-                    <div class="custom-control custom-checkbox">
-                      <input type="checkbox" class="custom-control-input" id="brand-1">
-                      <label class="custom-control-label" for="brand-1">Brand Name #1</label>
-                    </div>
-                    <div class="custom-control custom-checkbox">
-                      <input type="checkbox" class="custom-control-input" id="brand-2">
-                      <label class="custom-control-label" for="brand-2">Brand Name #2</label>
-                    </div>
-                    <div class="custom-control custom-checkbox">
-                      <input type="checkbox" class="custom-control-input" id="brand-3">
-                      <label class="custom-control-label" for="brand-3">Brand Name #3</label>
-                    </div>
-                    <div class="custom-control custom-checkbox">
-                      <input type="checkbox" class="custom-control-input" id="brand-4">
-                      <label class="custom-control-label" for="brand-4">Brand Name #4</label>
-                    </div>
-                  </div>
-                  <div class="product-sidebar-widget">
-                    <h4 class="product-sidebar-widget-title">Color</h4>
-                    <div class="custom-control custom-radio custom-color-blue ">
-                      <input type="radio" id="color-1" name="customRadio" class="custom-control-input">
-                      <label class="custom-control-label" for="color-1">Blue</label>
-                    </div>
-                    <div class="custom-control custom-radio custom-color-red ">
-                      <input type="radio" id="color-2" name="customRadio" class="custom-control-input">
-                      <label class="custom-control-label" for="color-2">Red</label>
-                    </div>
-                    <div class="custom-control custom-radio custom-color-yellow ">
-                      <input type="radio" id="color-3" name="customRadio" class="custom-control-input">
-                      <label class="custom-control-label" for="color-3">Yellow</label>
-                    </div>
-                    <div class="custom-control custom-radio custom-color-black ">
-                      <input type="radio" id="color-4" name="customRadio" class="custom-control-input">
-                      <label class="custom-control-label" for="color-4">Black</label>
                     </div>
                   </div>
                   <div class="product-sidebar-widget">
                     <h4 class="product-sidebar-widget-title">Price</h4>
                     <div class="custom-control custom-checkbox">
-                      <input type="checkbox" class="custom-control-input" id="price-1">
-                      <label class="custom-control-label" for="price-1">$$</label>
+                      <input type="radio" name="price-radio" class="checkbox-filter custom-control-input" id="price-1">
+                      <label class="custom-control-label" for="price-1">$$ (up to 100$)</label>
                     </div>
                     <div class="custom-control custom-checkbox">
-                      <input type="checkbox" class="custom-control-input" id="price-2">
-                      <label class="custom-control-label" for="price-2">$$$</label>
+                      <input type="radio" name="price-radio" class="checkbox-filter custom-control-input" id="price-2">
+                      <label class="custom-control-label" for="price-2">$$$ (up to 1000$)</label>
                     </div>
                     <div class="custom-control custom-checkbox">
-                      <input type="checkbox" class="custom-control-input" id="price-3">
-                      <label class="custom-control-label" for="price-3">$$$$</label>
+                      <input type="radio" name="price-radio" class="checkbox-filter custom-control-input" id="price-3">
+                      <label class="custom-control-label" for="price-3">$$$$ (up to 1000$)</label>
                     </div>
                   </div>
                   <div class="product-sidebar-widget">
-                    <a href="#" class="btn btn-outline-light">Reset Filter</a>
+                    <h4 class="product-sidebar-widget-title">Vote</h4>
+                    <div class="custom-control custom-checkbox">
+                      <input type="radio" name="vote-radio" class="checkbox-filter custom-control-input" id="vote-1">
+                      <label class="custom-control-label" for="vote-1"><i class='fa fa-fw fa-star'></i><i class='fa fa-fw fa-star'></i></label>
+                    </div>
+                    <div class="custom-control custom-checkbox">
+                      <input type="radio" name="vote-radio" class="checkbox-filter custom-control-input" id="vote-2">
+                      <label class="custom-control-label" for="vote-2"><i class='fa fa-fw fa-star'></i><i class='fa fa-fw fa-star'></i><i class='fa fa-fw fa-star'></i></label>
+                    </div>
+                    <div class="custom-control custom-checkbox">
+                      <input type="radio" name="vote-radio" class="checkbox-filter custom-control-input" id="vote-3">
+                      <label class="custom-control-label" for="vote-3"><i class='fa fa-fw fa-star'></i><i class='fa fa-fw fa-star'></i><i class='fa fa-fw fa-star'></i><i class='fa fa-fw fa-star'></i><i class='fa fa-fw fa-star'></i></label>
+                    </div>
+                  </div>
+
+                  <div class="product-sidebar-widget d-flex flex-nowrap flex-row justify-content-center align-items-center">
+                    <a  class="btn btn-outline-light" id="reset-filter">Reset Filter</a>
+                    <a  class="btn btn-outline-light" id="apply-filter">Apply Filter</a>
                   </div>
                 </div>
               </div>
@@ -676,13 +422,55 @@
     <!-- ============================================================== -->
     <!-- Optional JavaScript -->
     <!-- jquery 3.3.1 -->
-    <script src="assets/vendor/jquery/jquery-3.3.1.min.js"></script>
+    <script src="<?php echo base_url(); ?>assets/admin/vendor/jquery/jquery-3.3.1.min.js"></script>
     <!-- bootstap bundle js -->
-    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.js"></script>
+    <script src="<?php echo base_url(); ?>assets/admin/vendor/bootstrap/js/bootstrap.bundle.js"></script>
     <!-- slimscroll js -->
-    <script src="assets/vendor/slimscroll/jquery.slimscroll.js"></script>
+    <script src="<?php echo base_url(); ?>assets/admin/vendor/slimscroll/jquery.slimscroll.js"></script>
     <!-- main js -->
-    <script src="assets/libs/js/main-js.js"></script>
+    <script src="<?php echo base_url(); ?>assets/admin/libs/js/main-js.js"></script>
+    <script>
+      $("#reset-filter").on("click", function(){
+        $(".checkbox-filter").prop('checked', false);
+      });
+
+      let size = [], vote = [], price = [];
+      // ajax apply fillter and connect tho database => return database after fetch data
+      $("#apply-filter").click(function () {
+        // get value of checkboxs
+       size = [], vote = [], price = [];
+
+        $("input.checkbox-filter:checked").map((index, elem) => {
+          // console.log(elem.id);
+          if(elem.id.includes('size')){
+            size.push(Number(elem.id[elem.id.length - 1]));
+          }
+          if(elem.id.includes('price')){
+            price.push(Number(elem.id[elem.id.length - 1]));
+          }
+          if(elem.id.includes('vote')){
+            vote.push(Number(elem.id[elem.id.length - 1]));
+          }
+        });
+        // console.log(size, vote, price );
+        $.ajax({
+          url: 'http://localhost:6677/codeigniter/index.php/admin/getProduct',
+          type: 'POST',
+          dataType: 'json',
+          data: {"filter": {"size" : size, "vote" : vote, "price" : price }},
+        })
+        .done(function() {
+          console.log("success ajax");
+        })
+        .fail(function() {
+          console.log("error ajax");
+        })
+        .always(function() {
+          console.log("complete ajax");
+        });
+
+      })
+    </script>
   </body>
 
-</html>
+  </html>
