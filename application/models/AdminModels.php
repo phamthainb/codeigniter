@@ -72,46 +72,118 @@ class AdminModels extends CI_Model {
 		);
 		return $result;
 	}
+
 	public function getProductFromDatabase($filter) {
 		// print_r($filter);
 		// die();
-		$size = $filter['size'];
-		$price = $filter['price'][0] === 1 ? 100 : 1000;
-		$vote = $filter['vote'][0];
+
+		$size = "";
+		$price = 0;
+		$vote = 0;
+
+		if (isset($filter['size'])) {
+			if (strlen($filter['size']) >= 3) {
+				$size = $filter['size'];
+			}
+		}
+
+		if (isset($filter['price'])) {
+			if ($filter['price'][0] == 1) {
+				$price = 100;
+			} elseif ($filter['price'][0] == 2) {
+				$price = 1000;
+			} elseif ($filter['price'][0] == 3) {
+				$price = 10000;
+			} else {
+				$price = 0;
+			}
+		}
+
+		if (isset($filter['vote'])) {
+			if ($filter['vote'][0] == 1) {
+				$vote = 2;
+			} elseif ($filter['vote'][0] == 2) {
+				$vote = 3;
+			} elseif ($filter['vote'][0] == 3) {
+				$vote = 5;
+			} else {
+				$vote = 0;
+			}
+		}
+
+		// print_r(($size));
+		// echo "<br>";
+		// print_r($price);
+		// echo "<br>";
+		// print_r($vote);
+		// echo "<br>";
+		// die();
 
 		$query = $this->db->get('table_dssp');
 
 		if (is_array($filter)) {
-			if (array_key_exists('size', $filter) && array_key_exists('price', $filter) && array_key_exists('vote', $filter)) {
+			if ($size != "" && $price != 0 && $vote != 0) {
 				//1 all value in filter
-				echo "1 all value in filter";
-				// $this->db->or_having(array('product_size =' => , 'product_price' => , 'product_vote' => ))
-			} elseif (array_key_exists('size', $filter) && array_key_exists('price', $filter)) {
+				// echo "1 all value in filter";
+				$sql = "SELECT * FROM `table_dssp` WHERE `product_size` IN $size AND `product_vote` = $vote AND `product_price` <= $price";
+				// print_r($sql);
+
+				$query = $this->db->query($sql);
+				print_r(json_encode($query->result_array()));
+			} elseif ($size != "" && $price != 0) {
 				//2 size, price
-				echo "size, price";
-			} elseif (array_key_exists('vote', $filter) && array_key_exists('price', $filter)) {
+				// echo "size, price";
+				$sql = "SELECT * FROM `table_dssp` WHERE `product_size` IN $size AND `product_price` <= $price";
+				// print_r($sql);
+
+				$query = $this->db->query($sql);
+				print_r(json_encode($query->result_array()));
+			} elseif ($vote != 0 && $price != 0) {
 				//3 vote, price
-				echo "vote, price";
-			} elseif (array_key_exists('size', $filter) && array_key_exists('vote', $filter)) {
+				// echo "vote, price";
+				$sql = "SELECT * FROM `table_dssp` WHERE `product_vote` = $vote AND `product_price` <= $price";
+				// print_r($sql);
+
+				$query = $this->db->query($sql);
+				print_r(json_encode($query->result_array()));
+			} elseif ($size != "" && $vote != 0) {
 				//4 size, vote
-				echo " size, vote";
-			} elseif (array_key_exists('price', $filter)) {
+				// echo " size, vote";
+				$sql = "SELECT * FROM `table_dssp` WHERE `product_size` IN $size AND `product_vote` = $vote";
+				// print_r($sql);
+
+				$query = $this->db->query($sql);
+				print_r(json_encode($query->result_array()));
+			} elseif ($price != 0) {
 				//5 price
-				echo "price";
-				$query = $this->db->get_where('table_dssp', 'product_price' <= $filter['price'][0]);
-			} elseif (array_key_exists('vote', $filter)) {
+				// echo "price";
+				$sql = "SELECT * FROM `table_dssp` WHERE `product_price` <= $price";
+				// print_r($sql);
+
+				$query = $this->db->query($sql);
+				print_r(json_encode($query->result_array()));
+			} elseif ($vote != 0) {
 				//6 vote
-				echo "vote";
+				// echo "vote";
 				// print_r($filter);
-			} elseif (array_key_exists('size', $filter)) {
+				$sql = "SELECT * FROM `table_dssp` WHERE `product_vote` = $vote";
+				// print_r($sql);
+				$query = $this->db->query($sql);
+				print_r(json_encode($query->result_array()));
+			} elseif ($size != "") {
 				//7 size
-				echo "size";
+				// echo "size";
+				$sql = "SELECT * FROM `table_dssp` WHERE `product_size` IN $size";
+				// print_r($sql);
+				$query = $this->db->query($sql);
+				print_r(json_encode($query->result_array()));
+
+			} elseif (isset($filter['size']) && $filter['size'] == '()') {
+				print_r(json_encode($query->result_array()));
 			}
-		} else {
-			echo 'nothing';
 		}
 
-		print_r($query->result_array());
+		// print_r($query->result_array());
 		// die();
 		return $query->result_array();
 	}

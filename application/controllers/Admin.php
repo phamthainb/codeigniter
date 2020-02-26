@@ -14,7 +14,7 @@ class Admin extends CI_Controller {
 		$this->load->view('admin/index');
 	}
 
-	// Add a new item
+	// load pages
 	public function loadPages($param) {
 		// echo $param;
 
