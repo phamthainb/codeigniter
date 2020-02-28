@@ -1,6 +1,10 @@
 <?php
-// print_r($dataProduct);
-// die();
+
+if (isset($results)) {
+	// echo ("<prev>results<prev>");
+	// print_r($results);
+	// echo $links;
+}
 ?>
 <!doctype html>
 <html lang="en">
@@ -273,51 +277,45 @@
                             <div class="col-xl-9 col-lg-8 col-md-8 col-sm-12 col-12">
                                 <div class="row" id="product-list">
                                     <!-- // start list product -->
-                                    <?php foreach ($dataProduct as $key) {
-	?>
+                                    <?php if (isset($results)) {
+	foreach ($results as $item) {
+		// print_r($item);
+
+		// echo "<br>";
+		?>
                                     <div class="col-xl-4 col-lg-6 col-md-12 col-sm-12 col-12">
                                         <div class="product-thumbnail">
                                             <div class="product-img-head">
                                                 <div class="product-img">
-                                                    <img src="<?php echo base_url() . $key['product_image'] ?>" alt="" class="img-fluid"></div>
-                                                <!-- <div class="ribbons"><div class="ribbons-text"><?php echo $key['product_point'] ?></div></div> -->
+                                                    <img src="<?php echo base_url() . $item[5] ?>" alt="" class="img-fluid"></div>
+                                                <!-- <div class=""><a href="#" class="product-wishlist-btn"><i class="fas fa-heart"></i></a></div> -->
                                             </div>
                                             <div class="product-content">
                                                 <div class="product-content-head">
                                                     <h3 class="product-title">
-                                                        <?php echo $key['product_name'] ?>
+                                                        <?php echo $item[1] ?>
                                                     </h3>
                                                     <div class="product-rating d-inline-block">
-                                                        <?php
-for ($i = 0; $i < $key['product_vote']; $i++) {
-		echo "<i class='fa fa-fw fa-star'></i>";
-	}
-	?>
+                                                        <i class="fa fa-fw fa-star"></i>
                                                     </div>
-                                                    <?php
-for ($i = 5; $i > $key['product_vote']; $i--) {
-		echo "<i class='fa fa-fw fa-star'></i>";
-	}
-	?>
                                                     <div class="product-price">$
-                                                        <?php echo $key['product_price'] ?>
+                                                        <?php echo $item[2] ?>
                                                     </div>
-                                                    <div class="product-size">
-                                                        <hr>
-                                                        Size :
-                                                        <?php echo $key['product_size'] == 1 ? "small" : ($key['product_size'] == 2 ? "medium" : ($key['product_size'] == 3 ? "large" : "extra large")) ?>
+                                                    <div class="product-size">size :
+                                                        <?php echo $item[9] ?>
                                                     </div>
                                                 </div>
                                                 <div class="product-btn">
+                                                    <!-- <a href="#" class="btn btn-primary">Add to Cart</a> -->
                                                     <a href="#" class="btn btn-outline-light">Details</a>
                                                     <a href="#" class="btn btn-outline-light"><i class="fas fa-exchange-alt"></i></a>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <?php }?>
+                                    <?php }}?>
                                     <!-- // end list product -->
-                                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                    <!-- <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                                         <nav aria-label="Page navigation example">
                                             <ul class="pagination">
                                                 <li class="page-item"><a class="page-link" href="#">Previous</a></li>
@@ -327,7 +325,10 @@ for ($i = 5; $i > $key['product_vote']; $i--) {
                                                 <li class="page-item"><a class="page-link" href="#">Next</a></li>
                                             </ul>
                                         </nav>
-                                    </div>
+                                    </div> -->
+                                    <?php if (isset($links)) {?>
+                                    <?php echo $links ?>
+                                    <?php }?>
                                 </div>
                             </div>
                             <div class="col-xl-3 col-lg-4 col-md-4 col-sm-12 col-12">
@@ -338,19 +339,19 @@ for ($i = 5; $i > $key['product_vote']; $i--) {
                                     <div class="product-sidebar-widget">
                                         <h4 class="product-sidebar-widget-title">Size</h4>
                                         <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="checkbox-filter custom-control-input" id="size-1">
+                                            <input type="checkbox" name="size-radio" class="checkbox-filter custom-control-input" id="size-1">
                                             <label class="custom-control-label" for="size-1">Small</label>
                                         </div>
                                         <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="checkbox-filter custom-control-input" id="size-2">
+                                            <input type="checkbox" name="size-radio" class="checkbox-filter custom-control-input" id="size-2">
                                             <label class="custom-control-label" for="size-2">Medium</label>
                                         </div>
                                         <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="checkbox-filter custom-control-input" id="size-3">
+                                            <input type="checkbox" name="size-radio" class="checkbox-filter custom-control-input" id="size-3">
                                             <label class="custom-control-label" for="size-3">Large</label>
                                         </div>
                                         <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="checkbox-filter custom-control-input" id="size-4">
+                                            <input type="checkbox" name="size-radio" class="checkbox-filter custom-control-input" id="size-4">
                                             <label class="custom-control-label" for="size-4">Extra Large</label>
                                         </div>
                                     </div>
@@ -433,98 +434,60 @@ for ($i = 5; $i > $key['product_vote']; $i--) {
         <!-- main js -->
         <script src="<?php echo base_url(); ?>assets/admin/libs/js/main-js.js"></script>
         <script>
-        $("#reset-filter").on("click", function() {
+        $("#reset-filter").on('click', function() {
+            // reset all choose
             $(".checkbox-filter").prop('checked', false);
-
         });
+        // ajax post data filter
+        $("#apply-filter").on('click', function() {
 
-        let size = "",
-            vote = [],
-            price = [];
-        // ajax apply fillter and connect tho database => return database after fetch data
-        $("#apply-filter").click(function() {
-            // get value of checkboxs
-            size = "(", vote = [], price = [];
+            // collect data filter
+            let filter = {
+                size: [],
+                price: "",
+                vote: ""
+            };
+            let list_checkbox = $(".checkbox-filter");
+            for (let item of list_checkbox) {
+                if ($(item).is(":checked")) {
+                    let name = $(item).attr("name").split("-")[0];
+                    let value = item.id.split("-")[item.id.split("-").length - 1];
+                    switch (name) {
+                        case 'size':
+                            {
+                                filter.size.push(value);
+                                break;
+                            }
 
-            $("input.checkbox-filter:checked").map((index, elem) => {
-                // console.log(elem.id);
-                if (elem.id.includes('size')) {
-                    size += (elem.id[elem.id.length - 1]);
-                    size += ",";
-                }
-                if (elem.id.includes('price')) {
-                    price.push(Number(elem.id[elem.id.length - 1]));
-                }
-                if (elem.id.includes('vote')) {
-                    vote.push(Number(elem.id[elem.id.length - 1]));
-                }
-            });
+                        case 'price':
+                            {
+                                filter.price = value;
+                                break;
+                            }
 
-            if (size.length > 1) {
-                size = size.slice(0, size.length - 1);
+                        case 'vote':
+                            {
+                                filter.vote = value;
+                                break;
+                            }
+                        default:
+                            break;
+                    }
+                }
             }
-            size += ")";
-            // console.log(size, size.length);
-
-            $.ajax({
-                url: 'http://localhost:6677/codeigniter/index.php/admin/getProduct',
-                type: 'POST',
-                dataType: 'json',
-                data: { "filter": { "size": size, "vote": vote, "price": price } },
-                success: function(data) {
-                    console.log(data);
-                    let productList = $("#product-list");
-                    productList.empty(); // clear parent
-                    if (data.length > 0) {
-                        data.map(function(index, elem) {
-                            let vote = "";
-                            let unvote = "";
-                            let size = "";
-                            for (var i = 0; i < index.product_vote; i++) vote += "<i class='fa fa-fw fa-star'></i>";
-                            for (var i = 5; i > index.product_vote; i--) unvote += "<i class='fa fa-fw fa-star'></i>";
-                              size = index.product_size == 1 ? "small" : (index.product_size == 2 ? "medium" : (index.product_size == 3 ? "large" : "extra large"));
-                            let nodeHTMl = '<div class="col-xl-4 col-lg-6 col-md-12 col-sm-12 col-12">' +
-                                '            <div class="product-thumbnail">' +
-                                '                <div class="product-img-head">' +
-                                '                    <div class="product-img">' +
-                                '                        <img src="' + "<?php echo (base_url()) ?>" + index.product_image + '" alt="" class="img-fluid"></div>' +
-                                '                </div>' +
-                                '                <div class="product-content">' +
-                                '                    <div class="product-content-head">' +
-                                '                        <h3 class="product-title">' + index.product_name + '</h3>' +
-                                '                        <div class="product-rating d-inline-block">' + vote + '</div>' + unvote +
-                                '                        <div class="product-price">$' + index.product_price + '</div>' +
-                                '                        <div class="product-size">' +
-                                '                            <hr>' +
-                                '                          Size : ' + size +
-                                '                        </div>' +
-                                '                    </div>' +
-                                '                    <div class="product-btn">' +
-                                '                        <a href="#" class="btn btn-outline-light">Details</a>' +
-                                '                        <a href="#" class="btn btn-outline-light"><i class="fas fa-exchange-alt"></i></a>' +
-                                '                    </div>' +
-                                '                </div>' +
-                                '            </div>' +
-                                '        </div>';
-                            // console.log(nodeHTMl);
-                            productList.append(nodeHTMl);
-                        });
-
-                        productList.append(
-                            '<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">' +
-                            '    <nav aria-label="Page navigation example">' +
-                            '        <ul class="pagination">' +
-                            '            <li class="page-item"><a class="page-link" href="#">Previous</a></li>' +
-                            '            <li class="page-item"><a class="page-link" href="#">1</a></li>' +
-                            '            <li class="page-item active"><a class="page-link " href="#">2</a></li>' +
-                            '            <li class="page-item"><a class="page-link" href="#">3</a></li>' +
-                            '            <li class="page-item"><a class="page-link" href="#">Next</a></li>' +
-                            '        </ul>' +
-                            '    </nav>' +
-                            '</div>');
-                    } else productList.append('<h3>Nothing here</h3>');
-                }
-            });
+            filter.size = filter.size.toString();
+            // console.log(filter);
+            // request ajax
+          let res =  $.ajax({
+                    url: 'http://localhost:6677/codeigniter/index.php/admin/pagination',
+                    type: 'GET',
+                    dataType: 'json',
+                    data: { filter },
+            }).always(function() {
+              $("html").empty();
+              $("html").append(res.responseText);
+            // console.log("complete", res.responseText);
+          });
         })
 
         </script>

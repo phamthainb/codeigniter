@@ -73,120 +73,94 @@ class AdminModels extends CI_Model {
 		return $result;
 	}
 
-	public function getProductFromDatabase($filter) {
-		// print_r($filter);
-		// die();
+	/// pagination
+	public function get_current_page_records($limit, $start, $filter) {
 
-		$size = "";
-		$price = 0;
-		$vote = 0;
+		// query nomarl
+		$conn = mysqli_connect('localhost', 'root', '', 'database_modist');
+		$sql = self::sql($filter) . " LIMIT $start, $limit";
 
-		if (isset($filter['size'])) {
-			if (strlen($filter['size']) >= 3) {
-				$size = $filter['size'];
+		$result = $conn->query($sql);
+
+		if ($result) {
+
+			while ($row = $result->fetch_row()) {
+				$rows[] = $row;
 			}
+			return $rows;
 		}
 
-		if (isset($filter['price'])) {
-			if ($filter['price'][0] == 1) {
-				$price = 100;
-			} elseif ($filter['price'][0] == 2) {
-				$price = 1000;
-			} elseif ($filter['price'][0] == 3) {
-				$price = 10000;
-			} else {
-				$price = 0;
-			}
+		return false;
+	}
+
+	public function get_total($filter) {
+		// query nomarl
+		$conn = mysqli_connect('localhost', 'root', '', 'database_modist');
+		$sql = self::sql($filter);
+
+		$result = $conn->query($sql);
+
+		if ($result) {
+
+			return $result->num_rows;
 		}
 
-		if (isset($filter['vote'])) {
-			if ($filter['vote'][0] == 1) {
-				$vote = 2;
-			} elseif ($filter['vote'][0] == 2) {
-				$vote = 3;
-			} elseif ($filter['vote'][0] == 3) {
-				$vote = 5;
-			} else {
-				$vote = 0;
-			}
-		}
+		return false;
+	}
 
-		// print_r(($size));
-		// echo "<br>";
-		// print_r($price);
-		// echo "<br>";
-		// print_r($vote);
-		// echo "<br>";
-		// die();
+	public function sql($filter) {
+		$sql = "";
 
-		$query = $this->db->get('table_dssp');
+		if ($filter != "no filter") {
 
-		if (is_array($filter)) {
+			$size = $filter['size'];
+			$price = $filter['price'];
+			$vote = $filter['vote'];
+
 			if ($size != "" && $price != 0 && $vote != 0) {
 				//1 all value in filter
 				// echo "1 all value in filter";
-				$sql = "SELECT * FROM `table_dssp` WHERE `product_size` IN $size AND `product_vote` = $vote AND `product_price` <= $price";
-				// print_r($sql);
+				$sql = "SELECT * FROM `table_dssp` WHERE `product_size` IN ($size) AND `product_vote` = $vote AND `product_price` <= $price";
 
-				$query = $this->db->query($sql);
-				print_r(json_encode($query->result_array()));
 			} elseif ($size != "" && $price != 0) {
 				//2 size, price
 				// echo "size, price";
-				$sql = "SELECT * FROM `table_dssp` WHERE `product_size` IN $size AND `product_price` <= $price";
-				// print_r($sql);
+				$sql = "SELECT * FROM `table_dssp` WHERE `product_size` IN ($size) AND `product_price` <= $price";
 
-				$query = $this->db->query($sql);
-				print_r(json_encode($query->result_array()));
 			} elseif ($vote != 0 && $price != 0) {
 				//3 vote, price
 				// echo "vote, price";
 				$sql = "SELECT * FROM `table_dssp` WHERE `product_vote` = $vote AND `product_price` <= $price";
-				// print_r($sql);
 
-				$query = $this->db->query($sql);
-				print_r(json_encode($query->result_array()));
 			} elseif ($size != "" && $vote != 0) {
 				//4 size, vote
 				// echo " size, vote";
-				$sql = "SELECT * FROM `table_dssp` WHERE `product_size` IN $size AND `product_vote` = $vote";
-				// print_r($sql);
+				$sql = "SELECT * FROM `table_dssp` WHERE `product_size` IN ($size) AND `product_vote` = $vote";
 
-				$query = $this->db->query($sql);
-				print_r(json_encode($query->result_array()));
 			} elseif ($price != 0) {
 				//5 price
 				// echo "price";
 				$sql = "SELECT * FROM `table_dssp` WHERE `product_price` <= $price";
-				// print_r($sql);
 
-				$query = $this->db->query($sql);
-				print_r(json_encode($query->result_array()));
 			} elseif ($vote != 0) {
 				//6 vote
 				// echo "vote";
-				// print_r($filter);
 				$sql = "SELECT * FROM `table_dssp` WHERE `product_vote` = $vote";
-				// print_r($sql);
-				$query = $this->db->query($sql);
-				print_r(json_encode($query->result_array()));
+
 			} elseif ($size != "") {
 				//7 size
 				// echo "size";
-				$sql = "SELECT * FROM `table_dssp` WHERE `product_size` IN $size";
-				// print_r($sql);
-				$query = $this->db->query($sql);
-				print_r(json_encode($query->result_array()));
+				$sql = "SELECT * FROM `table_dssp` WHERE `product_size` IN ($size)";
 
-			} elseif (isset($filter['size']) && $filter['size'] == '()') {
-				print_r(json_encode($query->result_array()));
 			}
+		} else {
+			$sql = "SELECT * FROM `table_dssp`";
 		}
-
-		// print_r($query->result_array());
-		// die();
-		return $query->result_array();
+		return $sql;
 	}
+	/// pagination
+
+	// end class
 }
 
 /* End of file Admin.php */

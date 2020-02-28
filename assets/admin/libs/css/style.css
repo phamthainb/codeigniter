@@ -7199,7 +7199,12 @@ Media Query
   }
 }
 
+.pagination span a{
+    padding: 10px;
+    border: 1px solid black;
+    margin: 5px;cursor: pointer;
 
+  }
 
 
 /* Custom, iPhone Retina */
